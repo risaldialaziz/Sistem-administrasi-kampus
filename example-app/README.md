@@ -61,7 +61,7 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## SIAK - Sistem Administrasi Kampus
+## Rokania - Sistem Administrasi Kampus
 
 SIAK menyediakan dashboard dan modul operasional untuk mahasiswa, dosen, akademik, keuangan, surat, pengumuman, laporan, pengguna, dan audit log.
 

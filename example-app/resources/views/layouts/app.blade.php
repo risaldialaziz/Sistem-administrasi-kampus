@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title','SIAK') - Sistem Administrasi Kampus</title>
+    <title>@yield('title','Rokania') - Administrasi Kampus</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-slate-100 text-slate-800" x-data="{open:true,mobile:false}">
 <div class="min-h-screen lg:flex">
     <aside class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-950 text-white transition lg:relative" :class="mobile?'translate-x-0':'-translate-x-full lg:translate-x-0'">
-        <div class="flex h-16 items-center border-b border-slate-800 px-5"><div class="mr-3 grid h-9 w-9 place-items-center rounded-lg bg-indigo-500 font-bold">S</div><div><p class="font-semibold">SIAK</p><p class="text-xs text-slate-400">Administrasi Kampus</p></div></div>
+        <div class="flex h-16 items-center border-b border-slate-800 px-5"><div class="mr-3 grid h-9 w-9 place-items-center rounded-lg bg-indigo-500 font-bold">R</div><div><p class="font-semibold">Rokania</p><p class="text-xs text-slate-400">Administrasi Kampus</p></div></div>
         <nav class="space-y-1 p-3 text-sm">
             <a href="{{ route('dashboard') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-800">Dashboard</a>
             @if(in_array(auth()->user()->role,['super_admin','admin_kampus','admin_akademik']))
@@ -25,7 +25,7 @@
             @endif
             <a href="{{ route('krs.index') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-800">KRS</a>
             <a href="{{ route('khs.index') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-800">Nilai & KHS</a>
-            @if(in_array(auth()->user()->role,['super_admin','admin_kampus','admin_keuangan']))
+            @if(in_array(auth()->user()->role,['super_admin','admin_kampus','admin_keuangan','mahasiswa']))
             <a href="{{ route('pembayaran.index') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-800">Pembayaran UKT</a>
             @endif
             <a href="{{ route('documents.index') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-800">Surat & Dokumen</a>
