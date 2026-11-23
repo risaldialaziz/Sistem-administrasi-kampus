@@ -61,6 +61,59 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+## SIAK - Sistem Administrasi Kampus
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+SIAK menyediakan dashboard dan modul operasional untuk mahasiswa, dosen, akademik, keuangan, surat, pengumuman, laporan, pengguna, dan audit log.
+
+### Persyaratan
+- PHP 8.3+
+- Composer
+- MySQL 8+ (disarankan) atau SQLite untuk demo lokal
+- Node.js 18+
+
+### Instalasi
+```bash
+composer install
+copy .env.example .env
+php artisan key:generate
+```
+
+Untuk MySQL, ubah nilai berikut pada `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=siak
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Buat database `siak`, kemudian jalankan:
+```bash
+php artisan migrate --seed
+npm install
+npm run build
+php artisan storage:link
+php artisan serve
+```
+
+Untuk demonstrasi tanpa MySQL, aplikasi sudah dikonfigurasi memakai SQLite pada `database/database.sqlite`.
+
+### Menjalankan dari Windows
+Pastikan terminal berada di folder yang memuat `artisan`:
+```bat
+cd "C:\Sistem  layanan administrasi kampus\example-app"
+php artisan serve
+```
+
+Atau jalankan skrip `start-siak.bat` dari folder `C:\Sistem  layanan administrasi kampus`. Skrip tersebut otomatis berpindah ke folder `example-app`.
+
+### Akun Demo
+| Role | Email | Password |
+|---|---|---|
+| Super Admin | admin@siak.test | password |
+| Admin Kampus | kampus@siak.test | password |
+| Admin Akademik | akademik@siak.test | password |
+| Admin Keuangan | keuangan@siak.test | password |
+| Dosen | dosen@siak.test | password |
+| Mahasiswa | mahasiswa@siak.test | password |
